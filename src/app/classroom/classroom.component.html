@@ -1,0 +1,32 @@
+<input type="text" [(ngModel)]="data.classNames" placeholder="Class name..."/>
+<h1>Danh sách sinh viên lớp {{data.classNames}}:</h1>
+<button type="button" (click)="changeName()">Change Name</button>
+<app-student *ngFor="let sv of studentArray" [data]="sv"></app-student>
+
+
+<h2>Trạng thái hoạt động của lớp:
+<span *ngIf="data.classStatus">Đang hoạt động</span>
+<span *ngIf="!data.classStatus">Không hoạt động</span>
+</h2>
+<h2>Danh sách lớp và trạng thái hoạt động:
+
+</h2>
+
+<button type="button" (click)="changeStatus()">
+  <span *ngIf="data.classStatus"> Tắt</span>
+  <span *ngIf="!data.classStatus">Bật</span>
+</button>
+
+<h2>Danh sách giáo viên:</h2>
+<ol>
+  <li  *ngFor="let t of teacherNames; let i=index;">
+    {{teacherNames[i]}}
+  </li>
+</ol>
+
+<h2>Danh sách môn học đã học:</h2>
+<ul>
+  <li *ngFor="let s of subjectNames; let i=index;">
+    {{subjectNames[i]}}
+  </li>
+</ul>
