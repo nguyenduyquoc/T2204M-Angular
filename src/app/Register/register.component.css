@@ -1,0 +1,59 @@
+.container.num1 {
+  background-image: linear-gradient(180deg, #661ea8, #8383ea);
+  margin-top: 40px;
+  padding: 50px 0;
+}
+.loginRegister {
+  border-radius: 14px;
+  width: 600px;
+  margin: 60px auto;
+
+  background-color: #320c42;
+}
+.loginRegister h1 {
+  background-color: #2d073d;
+  margin: 0;
+  border-radius: 14px 14px 0;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  color: white;
+  text-align: center;
+}
+.loginRegister .whiteWord{
+  color: white;
+}
+.loginRegister .child1 {
+  margin-bottom: 30px;
+}
+.loginRegister .box1 {
+  margin: 0 30px;
+}
+.loginRegister .login.btn.btn-primary{
+  width: 270px;
+
+}
+.loginRegister .signup {
+  color: white;
+}
+.btn.btn-primary {
+  width: 270px;
+  margin-top: 26px;
+  margin-left: 150px;
+}
+.loginHere {
+  color: white;
+  margin-top: 20px;
+  padding-bottom: 28px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #f59aaa;
+}
+.loginHere :hover {
+  border-radius: 3px 3px 3px 3px;
+  background-color: gray;
+  color: white;
+}
+
+

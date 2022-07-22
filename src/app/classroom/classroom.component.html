@@ -4,14 +4,12 @@
 <app-student *ngFor="let sv of studentArray" [data]="sv"></app-student>
 
 
+<h1>Danh sách lớp và trạng thái hoạt động:</h1>
+
 <h2>Trạng thái hoạt động của lớp:
-<span *ngIf="data.classStatus">Đang hoạt động</span>
-<span *ngIf="!data.classStatus">Không hoạt động</span>
+  <span *ngIf="data.classStatus">Đang hoạt động</span>
+  <span *ngIf="!data.classStatus">Không hoạt động</span>
 </h2>
-<h2>Danh sách lớp và trạng thái hoạt động:
-
-</h2>
-
 <button type="button" (click)="changeStatus()">
   <span *ngIf="data.classStatus"> Tắt</span>
   <span *ngIf="!data.classStatus">Bật</span>
@@ -30,3 +28,4 @@
     {{subjectNames[i]}}
   </li>
 </ul>
+

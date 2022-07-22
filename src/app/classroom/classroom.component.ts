@@ -10,13 +10,6 @@ export class ClassroomComponent {
   @Input()
   data!:IClassroom;
 
-  studentName = [
-    'Hoàng Duy Quốc',
-    'Nguyễn Phương Ngân',
-    'Hai Con Lợn'
-  ]
-
-  studentAge = [21,18,21];
 
   //Tạo một danh sách sinh viên
   studentArray: IStudent[] = [

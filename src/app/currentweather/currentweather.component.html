@@ -1,0 +1,12 @@
+
+<h1>Thông tin thời tiết hôm nay:</h1>
+<div>
+  <input type="text" [(ngModel)]="cityCode" id="ipCity" placeholder=".........."/>
+  <button type="button" (click)="changeCity()">Change City</button>
+</div>
+<div *ngIf="data">
+  <h2>{{data.name+ ' , ' +data.sys.country}}</h2>
+  <h3>Temp: {{data.main.temp}}</h3>
+  <h3>Pressure: {{data.main.pressure}}</h3>
+</div>
+<app-currentweather2></app-currentweather2>

@@ -1,0 +1,15 @@
+
+<input type="text" [(ngModel)]="cityCode" id="ipCity" placeholder="........"/>
+<button type="button" (click)="changeCity()">Change City</button>
+<h2 *ngIf="data">{{data.city.name+' , '+data.city.country}}</h2>
+<div class="container weather2">
+  <div class="row" *ngIf="data">
+    <div class="col-3 child" *ngFor="let list of data.list; let i = index">
+      <h3>{{data.list[i].dt_txt}}</h3>
+      <h3>{{data.list[i].main.temp}}<sup> o</sup>C</h3>
+      <h3>{{data.list[i].weather[0].description}}</h3>
+      <img src='https://openweathermap.org/img/wn/{{data.list[i].weather[0].icon}}@2x.png'/>
+    </div>
+  </div>
+</div>
+
