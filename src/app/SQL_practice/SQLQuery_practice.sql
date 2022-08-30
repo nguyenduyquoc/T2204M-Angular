@@ -17,8 +17,8 @@ create table Employee (
 );
 
 --insert data
- 
-insert into Department(DepartName, Description) values 
+
+insert into Department(DepartName, Description) values
 ('sale department','sales for the company'),
 ('marketing department','give all ideas to the company'),
 ('personnel department','Manage all employee issues in the company');
@@ -29,19 +29,28 @@ insert into Employee values
 ('EPAAC', 'Nguyen', 'Phuong Ngan', '20000506', '0', 'Ha Noi', 2, 200.87),
 ('EPAAD', 'Cristiano', 'Ronaldo', '19870204', '1', 'Madrid', 1, 300.78)
 
---2. Increase the salary for all employees by 10% 
+--2. Increase the salary for all employees by 10%
 
 update Employee set Salary = Salary * (1 + 0.1);
 
 --3. Using ALTER TABLE statement to add constraint on Employee table to ensure that
---salary always greater than 0 
+--salary always greater than 0
 
 alter table Employee add constraint check_salary check(Salary > 0);
 
---4Create an unique, none-clustered index named IX_DepartmentName on
---DepartName column on Department table 
+--4. Create a trigger named tg_chkBirthday to ensure Employee’s age is greater than 22,
+   use the birthday value to check the age [2 marks].
 
-create index IX_DepartmentName on Department(DepartName);
+create trigger tg_chkBirthday on Employee
+after insert
+as
+begin
+	if exists (select * from inserted where Birthday < 22)
+	begin
+		print 'Employee’s age is greater than 22';
+		rollback transaction;
+	end
+end
 
 --5. Create an unique, none-clustered index named IX_DepartmentName on
 --DepartName column on Department table [1 marks].
@@ -50,7 +59,7 @@ create unique index IX_DeparmentName
 on Department(DepartName);
 
 --7. Create a stored procedure named sp_getAllEmp that accepts Department ID as
---given input parameter and displays all employees in that Department 
+--given input parameter and displays all employees in that Department
 
 create procedure sp_getAllEmp @departmentId int as
 select * from Employee where DepartId = @departmentId;
